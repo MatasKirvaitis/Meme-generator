@@ -16,6 +16,7 @@ export class FileUploadComponent implements OnInit {
   fileToUpload: File = null;
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
+    this.uploadFileToActivity();
   };
   uploadFileToActivity() {
     this.fileUploadService.postFile(this.fileToUpload).subscribe(data => {

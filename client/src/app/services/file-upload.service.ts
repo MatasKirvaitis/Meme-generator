@@ -14,8 +14,9 @@ export class FileUploadService {
     const endpoint = '/upload';
     const formData: FormData = new FormData();
     formData.append('filekey', fileToUpload, fileToUpload.name);
+    //console.log('This is formdata:', formData.get('filekey'));
     return new Observable<any>(subscriber => {
-      this.http.post(endpoint, formData).subscribe(result => {
+      this.http.post(endpoint, { file: formData.get('filekey') }).subscribe(result => {
         subscriber.next(result);
       },
         err => {
