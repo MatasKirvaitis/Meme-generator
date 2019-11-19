@@ -1,0 +1,21 @@
+{
+  "name": "meme-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm --prefix ./server install ./server && npm --prefix ./client install ./client",
+    "build": "cd ./client && npm run build",
+    "start": "cd ./server && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatasKirvaitis/Meme-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatasKirvaitis/Meme-generator/issues"
+  },
+  "homepage": "https://github.com/MatasKirvaitis/Meme-generator#readme"
+}
