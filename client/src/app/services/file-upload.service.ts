@@ -7,16 +7,17 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class FileUploadService {
+  endpoint: string = '/upload';
 
   constructor(private http: HttpClient) { }
 
-  postFile(fileToUpload: File) {
-    const endpoint = '/upload';
+  postFile(fileToUpload: File, botText: string, topText: string) {
     const formData: FormData = new FormData();
-    formData.append('filekey', fileToUpload, fileToUpload.name);
-    //console.log('This is formdata:', formData.get('filekey'));
+    formData.append('file', fileToUpload, fileToUpload.name);
+    formData.append('botText', botText);
+    formData.append('topText', topText);
     return new Observable<any>(subscriber => {
-      this.http.post(endpoint, { file: formData.get('filekey') }).subscribe(result => {
+      this.http.post(this.endpoint, formData, { responseType: 'text' }).subscribe(result => {
         subscriber.next(result);
       },
         err => {

@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 100%;
+}
+.page-button {
+  padding: 5px 20px 20px;
+  font-family: Arial;
+}
+.page-text {
+  padding: 15px 20px 15px;
+  font-family: Arial;
+}
+.text-field-top {
+  padding: 10px 20px 5px;
+  font-family: Arial
+}
+.text-field-bot {
+  padding: 0px 20px 0px;
+  font-family: Arial
+}
+.img-main {
+  width: 90%;
+  padding: 0px 5% 0px 5%;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    width: 600px;
+  }
+  .img-main {
+    width: 691px;
+  }
+}
